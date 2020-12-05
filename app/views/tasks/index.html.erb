@@ -1,0 +1,12 @@
+<h1>Liste des tâches</h1>
+
+<% @tasks.each do |task|  %>
+<h2><%= task.title %></h2>
+<input type="Checkbox"<%= task.completed %>>
+
+<%= link_to "Voir le détail", task_path(task) %>
+<%= link_to "Modifier la tache", edit_task_path(task) %>
+<%= link_to "Supprimer", task_path(task), method: :delete %>
+<% end %>
+
+<div><%= link_to "Add a new task", new_task_path %></div>
